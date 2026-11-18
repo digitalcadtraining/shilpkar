@@ -137,3 +137,63 @@
   }
   .has-js main > .section-stage::after { display: none; }
 }
+
+
+/* V9 mobile layout correction — prevent invisible parent wrappers and excessive blank space.
+   Individual .scroll-reveal children remain animated by the IntersectionObserver. */
+.observe {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 800px) {
+  .section { padding-top: 60px; padding-bottom: 60px; }
+  .section-intro { margin-bottom: 26px; }
+  .journey .center { margin-bottom: 0; }
+  .journey .day-selector { margin-top: 25px; margin-bottom: 17px; }
+  .journey .journey-progress { margin-bottom: 14px; }
+  .journey .slider-foot { margin-top: 15px; }
+  .register { padding-top: 36px; padding-bottom: 38px; }
+  .faq { padding-top: 44px; }
+  .faq-list { margin-top: 26px; }
+  .quiet-note { margin-top: 20px; }
+}
+@media (max-width: 700px) {
+  /* Section-level clip-path effects can obscure content after touch scroll / iOS Safari.
+     Keep the staggered item reveals, but avoid hiding or translating whole sections. */
+  .has-js main > .section-stage,
+  .has-js main > .section-stage:not(.stage-visible),
+  .has-js main > .section-stage.stage-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+  .has-js main > .section-stage::after { display: none !important; }
+  .has-js .scroll-reveal.observe:not(.is-revealed) {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+}
+@media (max-width: 560px) {
+  html { scroll-padding-top: 73px; }
+  .section { padding: 44px 19px; }
+  .benefits { padding-bottom: 45px; }
+  .section-intro { gap: 4px; margin-bottom: 23px; }
+  .section-intro > p { margin: 12px 0 0; line-height: 1.65; }
+  .benefit-grid { gap: 10px; }
+  .benefit { padding: 18px 20px; }
+  .benefit h3 { margin: 10px 0 5px; }
+  .quiet-note { padding: 15px 16px; line-height: 1.6; }
+  .journey { padding-top: 45px; padding-bottom: 45px; }
+  .journey .center h2 { margin-bottom: 10px; }
+  .journey .day-selector { margin-top: 23px; margin-bottom: 19px; }
+  .day-tab { height: 64px; }
+  .day-content { padding: 28px 22px; }
+  .journey-art { min-height: 165px; }
+  .slider-foot { letter-spacing: .08em; }
+  .register { padding-top: 28px; padding-bottom: 32px; }
+  .faq { padding-top: 38px; padding-bottom: 52px; }
+  .faq-list { margin-top: 24px; }
+  .faq-list details { padding: 18px 3px; }
+  footer { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+}
