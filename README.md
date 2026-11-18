@@ -23,3 +23,16 @@ The site promotes a 7-day guided fasting education program, not medically unsupe
 Updated to **Shilpkar Dance & Fitness Center** (short wordmark **Shilpkar**) based on the client Instagram screenshot. The existing generic decorative leaf/lotus mark remains as an ornamental placeholder, not the official logo. Replace it with a high-resolution logo from the client if desired.
 
 Instagram: https://www.instagram.com/shilpkarfitness6/
+
+
+## V7: Full-page scroll animations
+
+- Scroll reveal for headings, descriptions, benefit cards, slider, price card, FAQ and footer.
+- Subtle hero-image parallax on desktop, a top-of-page reading progress bar, staggered elements, and refined FAQ/button animations.
+- All interactions use native browser APIs, not React or npm.
+- Reduced-motion preferences are respected, and touch devices avoid costly parallax.
+- Run index.html via VS Code Live Server. Payment remains unconnected until configured in config.js.
+
+
+## V8 full-section animations
+Each major section now slides and unveils as you scroll, followed by existing staggered inner animations. The effect runs once per section and doesn't lock or hijack scrolling. Reduced-motion settings are honored. On mobile the transitions are shorter and lighter.

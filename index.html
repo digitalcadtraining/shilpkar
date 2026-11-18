@@ -12,10 +12,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('has-js');</script>
   <script src="config.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-fill"></span></div>
   <a class="skip" href="#main">Skip to content</a>
   <div class="brand-band"><span class="lotus-mini">✧</span> <span data-brand>Shilpkar Dance & Fitness Center</span></div>
   <header class="header" id="top">
@@ -75,11 +77,12 @@
         <button class="day-tab" role="tab" id="tab-5" aria-selected="false" aria-controls="day-panel" data-day="5"><small>DAY</small><span>06</span></button>
         <button class="day-tab" role="tab" id="tab-6" aria-selected="false" aria-controls="day-panel" data-day="6"><small>DAY</small><span>07</span></button>
       </div>
+      <div class="journey-progress" aria-hidden="true"><span id="journey-progress-fill"></span></div>
       <div class="journey-card observe" id="day-panel" role="tabpanel" aria-labelledby="tab-0" tabindex="0" aria-live="polite">
         <div class="day-content"><p class="overline" id="day-label">DAY 01 · BEGIN</p><h3 id="day-title">Begin with intention</h3><p id="day-description">Start with orientation, safety guidance and a gentle introduction to the challenge.</p><p class="inclusion-label">WHAT WE'LL EXPLORE</p><ul id="day-activities"><li>Welcome and challenge overview</li><li>Health and suitability checklist</li><li>Personal intention setting</li></ul></div>
         <div class="journey-art"><div class="art-circle art-circle-a"></div><div class="art-circle art-circle-b"></div><div class="art-wave"></div><div class="journey-art-label"><span id="art-prompt">BREATHE IN</span><br><strong id="art-word">calm.</strong></div><span class="art-day" id="art-day">01<span>/07</span></span></div>
       </div>
-      <div class="slider-foot"><span>YOUR JOURNEY, AT YOUR OWN PACE</span><div class="slider-arrows"><button id="prev-day" type="button" aria-label="Previous day">←</button><button id="next-day" type="button" aria-label="Next day">→</button></div></div>
+      <div class="slider-foot"><span>SWIPE OR TAP TO EXPLORE · <b id="journey-counter">01 / 07</b></span><div class="slider-arrows"><button id="prev-day" type="button" aria-label="Previous day">←</button><button id="next-day" type="button" aria-label="Next day">→</button></div></div>
     </section>
 
     <section class="register section" id="register" aria-labelledby="register-title">
